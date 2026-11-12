@@ -1,0 +1,12 @@
+wechat-article-fetcher-skill
+Copyright (C) 2026 wechat-article-fetcher-skill contributors
+
+The Windows WeChat UI automation layer of this project
+(wechat-article-fetcher/mcp_server/wechat_runtime.py and
+wechat-article-fetcher/mcp_server/link_collector.py) is derived from the
+pywechat project (https://github.com/Hello-Mr-Crab/pywechat) and is licensed
+under the GNU Lesser General Public License, version 2.1. The full license
+text is provided in the LICENSE file at the repository root.
+
+The MCP server layer, article parsing layer, Skill definition and project
+documentation are provided by this project.
