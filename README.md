@@ -25,7 +25,7 @@
 | 微信客户端 | **4.1.8.101**（严格匹配，控件树结构与该版本绑定） |
 | 登录账号 | 必须**提前订阅**目标公众号或服务号 |
 | Python | 3.10+ |
-| 依赖 | `mcp`（或 `fastmcp`）、`pywinauto`、`pywin32`、`pyperclip`、`psutil` |
+| 依赖 | `mcp`、`pywinauto`、`pywin32`、`pyperclip`、`psutil` |
 | 账号类型 | 公众号名称需在 `OFFICIAL_ACCOUNT_TYPE_MAP` 中登记「公众号」/「服务号」 |
 
 **使用提示（不参与环境校验）**：微信 4.x 默认不暴露完整 UIA 控件树，建议在 Windows 上开启「讲述人」并保持微信前台；登录账号是否已订阅目标公众号，也需要用户自行确认。这两类条件无法由程序可靠判断，详见 `wechat-article-fetcher/references/environment.md`。
@@ -39,7 +39,7 @@ python -m pip install -r requirements.txt
 python scripts/check_environment.py
 ```
 
-自检输出 `ok: true` 且 `version_match: true` 后，将 `mcp.json.example` 中的条目合并进客户端的 MCP 配置（WorkBuddy 为 `~/.workbuddy-ai/mcp.json`）：
+自检输出 `ok: true` 且 `version_match: true` 后，将 `mcp.json.example` 中的条目合并进AI Agent的 MCP 配置文件（WorkBuddy 为 `~/.workbuddy-ai/mcp.json`），以完成MCP Server的注册：
 
 ```json
 {
@@ -56,7 +56,7 @@ python scripts/check_environment.py
 
 `cwd` 必须指向 `wechat-article-fetcher/` 的绝对路径，`command` 使用已安装依赖的 Python 解释器。新增的自定义连接器需在客户端的连接器管理页点击「信任 / 启用」。
 
-**安装 Skill**：把 `wechat-article-fetcher/` 整个目录拷到客户端的 skills 目录（WorkBuddy 用户级：`~/.workbuddy-ai/skills/`）。该目录名与 `SKILL.md` 的 `name` 一致，可独立分发。
+**安装 Skill**：把 `wechat-article-fetcher/` 整个目录拷到AI Agent的 skills 目录（WorkBuddy 用户级：`~/.workbuddy-ai/skills/`）或在Agent上直接添加技能。该目录名与 `SKILL.md` 的 `name` 一致，可独立分发。
 
 **单独验证解析链路**（不需要微信客户端、不经过 MCP）：
 
