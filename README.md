@@ -45,7 +45,7 @@ python scripts/check_environment.py
 {
   "mcpServers": {
     "wechat-article-fetcher": {
-      "command": "C:\\Python311\\python.exe",
+      "command": "C:\\path\\to\\python.exe",
       "args": ["-m", "mcp_server"],
       "cwd": "C:\\path\\to\\wechat-article-fetcher-skill\\wechat-article-fetcher",
       "env": { "PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1" }
